@@ -1,50 +1,100 @@
-# Welcome to your Expo app 👋
+React Native Movies Application (Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native app built with Expo showcasing authentication, API integration, native Android module, and performance-optimized UI.
 
-## Get started
+📱 Core Features
+🔐 Authentication
 
-1. Install dependencies
+Firebase Email/Password login
 
-   ```bash
-   npm install
-   ```
+Persistent session with AsyncStorage
 
-2. Start the app
+Auto-redirect after successful login
 
-   ```bash
-   npx expo start
-   ```
+🎬 Movies List
 
-In the output, you'll find options to open the app in a
+Fetches movie data from OMDB API
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Renders list using optimized FlatList
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Loading + error states
 
-## Get a fresh project
+Memoized item components & keyExtractor for performance
 
-When you're ready, run:
+📄 Movie Detail Screen
 
-```bash
-npm run reset-project
-```
+Detailed view with poster, plot, and ratings
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Back navigation to list
 
-## Learn more
+🤖 Native Android Module (Kotlin)
 
-To learn more about developing your project with Expo, look at the following resources:
+Custom module built with Kotlin
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Exposes device model, Android version, and manufacturer
 
-## Join the community
+Located at: android/app/src/main/java/.../demoapp/
 
-Join our community of developers creating universal apps.
+🛠️ Tech Stack
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Expo (React Native)
+
+Expo Router
+
+Firebase Authentication
+
+OMDB API
+
+AsyncStorage
+
+Kotlin Native Module
+
+React Native Paper UI
+
+🐛 Debugging & Tools
+
+React DevTools
+
+Chrome DevTools
+
+Flipper (network logs & native debugging)
+
+Logcat (Android native logs)
+
+Most Challenging Bug
+
+Android build failures caused by mismatched SDK/NDK/Gradle versions.
+Solved by aligning:
+
+minSdkVersion = 24
+
+compileSdk = 35
+
+targetSdk = 34
+
+ndkVersion = 25.1.8937393
+
+Disabling New Architecture (newArchEnabled=false)
+
+🚫 iOS Support
+
+iOS is not supported, due to:
+
+No macOS/Xcode
+
+Native module requires Swift/Obj-C
+
+Firebase iOS setup unavailable
+
+Android support is fully tested and stable.
+
+🎓 Learning Outcomes
+
+Easier: UI development, API integration, authentication, state management
+Challenging: Build configuration, native module bridging, Gradle/NDK version conflicts
+
+Key Insight:
+React Native + Expo offers rapid development, but requires careful version management when native code is involved.
+
+https://github.com/user-attachments/assets/ab5e289e-55bc-4e49-8333-75f2f126b68c
+
