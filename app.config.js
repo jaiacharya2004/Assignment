@@ -41,7 +41,7 @@ export default ({ config }) => ({
     },
     edgeToEdgeEnabled: true,
     predictiveBackGestureEnabled: false,
-    package: "com.anonymous.DemoApp"
+    package: "com.anonymous.demoapp"
   },
 
   web: {

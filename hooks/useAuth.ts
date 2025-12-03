@@ -79,7 +79,7 @@ export function useAuth() {
     setAuthState(prev => ({ ...prev, loading: true }));
     
     try {
-      const result = await AuthService.sendPasswordResetEmail(email);
+      const result = await AuthService.sendPasswordReset(email);
       
       if (result.success) {
         setAuthState(prev => ({ ...prev, loading: false }));
@@ -93,6 +93,7 @@ export function useAuth() {
       throw error;
     }
   };
+  
 
   const signOut = async () => {
     setAuthState(prev => ({ ...prev, loading: true }));
